@@ -2,7 +2,7 @@
 ## Title: TRDR
 ## Notes: Felsworn Tyrant diminishing-returns and gear comparison panel.
 ## Author: Minn
-## Version: 1.0.2
+## Version: 1.0.3
 ## OptionalDeps: ElvUI
 ## SavedVariablesPerCharacter: TRDRDB, TyrantAvoidanceDB
 
