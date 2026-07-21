@@ -153,6 +153,37 @@ local function drName(e)
     return "very heavy"
 end
 
+local function gradientColor(value, minimum, maximum)
+    if not value or not minimum or not maximum or maximum <= minimum then
+        return 1, 1, 1
+    end
+    local t = math.max(0, math.min(1, (value - minimum) / (maximum - minimum)))
+    if t < 0.5 then
+        return 1, t * 2, 0
+    end
+    return (1 - t) * 2, 1, 0
+end
+
+local function colorMarginalValues(now)
+    -- Compare each option by avoidance gained per single stat point.
+    local values = {
+        now.dodge10 / 10,
+        now.parry10 / 10,
+        now.agi10 / 10,
+        now.strGain / math.max(1, now.strNeeded),
+    }
+    local minimum, maximum = values[1], values[1]
+    for i = 2, #values do
+        minimum = math.min(minimum, values[i])
+        maximum = math.max(maximum, values[i])
+    end
+
+    local fields = {P.dodgeGain, P.parryGain, P.agiGain, P.strength}
+    for i, field in ipairs(fields) do
+        field:SetTextColor(gradientColor(values[i], minimum, maximum))
+    end
+end
+
 local function verdict(now, base)
     if not base then
         P.verdict:SetText("Save the current setup as a baseline, then equip or remove an item.")
@@ -213,6 +244,7 @@ local function update()
     P.parryGain:SetText(string.format("+10 parry rating: %.4f%% parry", now.parry10))
     P.agiGain:SetText(string.format("+10 agility: %.4f%% dodge", now.agi10))
     P.strength:SetText(string.format("Next STR breakpoint: +%d STR = ~%.4f%% parry", now.strNeeded, now.strGain))
+    colorMarginalValues(now)
     P.dodgeDR:SetText(string.format("Dodge DR: %.2f%% efficiency (%s)", now.dodgeEff, drName(now.dodgeEff)))
     P.parryDR:SetText(string.format("Parry DR: %.2f%% efficiency (%s)", now.parryEff, drName(now.parryEff)))
 
@@ -311,8 +343,8 @@ local function createPanel()
 
     local title = font(P, "GameFontNormalLarge", 16, -16)
     title:SetText("TRDR")
-    local sub = font(P, "GameFontHighlightSmall", 16, -42, 590, "LEFT", 28)
-    sub:SetText("Felsworn Tyrant diminishing returns and persistent gear comparison. Character-sheet dodge and parry are already after DR.")
+    local sub = font(P, "GameFontHighlightSmall", 16, -42, 590, "LEFT", 16)
+    sub:SetText("Felsworn Tyrant avoidance and gear comparison. All dodge and parry values are after DR.")
     P.baseInfo = font(P, "GameFontNormalSmall", 390, -20, 200, "RIGHT", 16)
 
     local heads = {{"Metric",18,180,"LEFT"},{"Baseline",203,105,"RIGHT"},{"Current",317,105,"RIGHT"},{"Difference",431,115,"RIGHT"}}
