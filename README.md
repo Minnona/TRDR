@@ -5,7 +5,7 @@ TRDR is a World of Warcraft 3.3.5a addon for a level-60 custom **Felsworn Tyrant
 ## Features
 
 - Blizzard Interface Options integration: `Esc -> Interface -> AddOns -> TRDR`
-- No slash commands
+- `/trdr` opens the TRDR options panel
 - Actual post-DR dodge and parry from the game API
 - Persistent gear baseline and automatic equipment-change comparison
 - Dodge, parry, combined avoidance, stamina, health, rating, and defense deltas
