@@ -1,0 +1,10 @@
+## Interface: 30300
+## Title: TRDR
+## Notes: Felsworn Tyrant diminishing-returns and gear comparison panel.
+## Author: Minn
+## Version: 1.0.1
+## OptionalDeps: ElvUI
+## SavedVariablesPerCharacter: TRDRDB, TyrantAvoidanceDB
+
+Compat.lua
+TRDR.lua
