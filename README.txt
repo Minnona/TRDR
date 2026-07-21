@@ -8,10 +8,10 @@ Installation
 Install the TRDR folder inside the Ascension live-client AddOns directory.
 
 Windows:
-<Ascension install folder>\AscensionWoW\resources\ascension-live\Interface\AddOns\TRDR
+AscensionWoW\resources\ascension-live\Interface\AddOns\TRDR
 
 Linux:
-/path/to/AscensionWoW/resources/ascension-live/Interface/AddOns/TRDR
+AscensionWoW/resources/ascension-live/Interface/AddOns/TRDR
 
 Manual installation:
 1. Remove or rename an older TRDR folder.
