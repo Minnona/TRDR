@@ -6,4 +6,5 @@
 ## OptionalDeps: ElvUI
 ## SavedVariablesPerCharacter: TRDRDB, TyrantAvoidanceDB
 
+Compat.lua
 TRDR.lua
