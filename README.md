@@ -9,31 +9,54 @@ TRDR is a World of Warcraft 3.3.5a addon for a level-60 custom **Felsworn Tyrant
 - Actual post-DR dodge and parry from the game API
 - Persistent gear baseline and automatic equipment-change comparison
 - Dodge, parry, combined avoidance, stamina, health, rating, and defense deltas
+- Marginal stat values ranked with a red-to-green efficiency gradient
 - Marginal DR efficiency for dodge and parry
 - Strength-to-parry breakpoint tracking
 - Naked calibration controls
 - Optional ElvUI skinning
 
-## Live-folder installation
+## Installation
 
-The repository root is the addon folder. Clone it directly into the live WoW AddOns directory:
+The addon belongs in the Ascension live-client AddOns folder:
 
-```bash
-cd /mnt/data/Games/AscensionWoW/resources/ascension-live/Interface/AddOns
-rm -rf TRDR
+### Windows
+
+```text
+<Ascension install folder>\AscensionWoW\resources\ascension-live\Interface\AddOns\TRDR
+```
+
+Example Git installation from PowerShell or Git Bash:
+
+```powershell
+cd "C:\path\to\AscensionWoW\resources\ascension-live\Interface\AddOns"
 git clone https://github.com/Minnona/TRDR.git TRDR
 ```
 
-After that, the installed addon and Git working tree are the same directory. Pull updates with:
+### Linux
+
+```text
+/path/to/AscensionWoW/resources/ascension-live/Interface/AddOns/TRDR
+```
+
+Example Git installation:
 
 ```bash
-cd /mnt/data/Games/AscensionWoW/resources/ascension-live/Interface/AddOns/TRDR
+cd "/path/to/AscensionWoW/resources/ascension-live/Interface/AddOns"
+git clone https://github.com/Minnona/TRDR.git TRDR
+```
+
+The repository root is the addon folder, so the installed addon and Git working tree can be the same directory. Pull future updates from inside the `TRDR` folder:
+
+```bash
 git pull
 ```
+
+For a manual installation, download the release ZIP and extract the `TRDR` folder into the same `Interface/AddOns` directory.
 
 ## Supported client
 
 - WoW 3.3.5a / Interface 30300
+- Ascension live-client folder layout
 - Fitted for a level-60 Felsworn Tyrant
 
 ## Avoidance model
