@@ -17,12 +17,12 @@ TRDR is a World of Warcraft 3.3.5a addon for a level-60 custom **Felsworn Tyrant
 
 ## Installation
 
-The addon belongs in the Ascension live-client AddOns folder:
+The addon folder is located under the Ascension live-client path shown below. Replace the leading install location with wherever Ascension is installed on your system.
 
 ### Windows
 
 ```text
-<Ascension install folder>\AscensionWoW\resources\ascension-live\Interface\AddOns\TRDR
+AscensionWoW\resources\ascension-live\Interface\AddOns\TRDR
 ```
 
 Example Git installation from PowerShell or Git Bash:
@@ -35,7 +35,7 @@ git clone https://github.com/Minnona/TRDR.git TRDR
 ### Linux
 
 ```text
-/path/to/AscensionWoW/resources/ascension-live/Interface/AddOns/TRDR
+AscensionWoW/resources/ascension-live/Interface/AddOns/TRDR
 ```
 
 Example Git installation:
