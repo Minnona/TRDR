@@ -1,4 +1,4 @@
-TRDR 1.0.1
+TRDR 1.0.2
 ==========
 
 WoW 3.3.5a addon for a level-60 Felsworn Tyrant tank.
@@ -12,8 +12,7 @@ Installation
 Open the addon
 --------------
 Esc -> Interface -> AddOns -> TRDR
-
-There are no slash commands.
+or type /trdr to open the panel directly.
 
 Features
 --------
@@ -32,6 +31,10 @@ Important
 TRDR reports avoidance and effective-health trade-offs. It does not pretend that
 an item with more avoidance but substantially less stamina is automatically better.
 The fitted formulas are calibrated for level 60.
+
+Version 1.0.2
+-------------
+- Added /trdr to open the Interface Options panel directly.
 
 Version 1.0.1
 -------------
