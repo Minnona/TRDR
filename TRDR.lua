@@ -363,6 +363,22 @@ local function createPanel()
     skin()
 end
 
+local function openPanel()
+    if not P then return end
+    if InterfaceOptionsFrame_OpenToCategory then
+        -- Calling twice is required on some 3.3.5 clients to select and scroll to the category reliably.
+        InterfaceOptionsFrame_OpenToCategory(P)
+        InterfaceOptionsFrame_OpenToCategory(P)
+    elseif InterfaceOptionsFrame then
+        InterfaceOptionsFrame:Show()
+    end
+end
+
+SLASH_TRDR1 = "/trdr"
+SlashCmdList.TRDR = function()
+    openPanel()
+end
+
 A:RegisterEvent("PLAYER_LOGIN")
 A:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
 A:RegisterEvent("PLAYER_ENTERING_WORLD")
